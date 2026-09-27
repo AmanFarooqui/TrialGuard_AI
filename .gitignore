@@ -1,0 +1,65 @@
+.venv/
+venv/
+env/
+ENV/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+
+# Streamlit local cache and credentials; keep other project configuration tracked.
+.streamlit/cache/
+**/.streamlit/secrets.toml
+**/.streamlit/credentials.toml
+
+.ipynb_checkpoints/
+
+# Local environment variables and secrets. Keep safe templates shareable.
+.env
+.env.*
+!.env.example
+!.env.template
+
+# IDE and editor state
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+logs/
+*.log
+
+# Temporary files and interrupted training outputs
+*.tmp
+*.temp
+*.partial
+*.joblib.tmp
+*.pkl.tmp
+*.checkpoint
+
+# Optional local raw inputs can be large or contain non-synthetic data.
+# Synthetic source data, processed runtime datasets, and saved models remain trackable.
+data/raw/*
+!data/raw/.gitkeep
+
+# Large generated synthetic inputs
+data/synthetic/lab_results.csv
+data/synthetic/visits.csv
+data/synthetic/adverse_events.csv
+data/synthetic/patients.csv
+data/synthetic/operational_events.csv
+data/synthetic/sites.csv
+data/synthetic/trials.csv
+
+# Unused baseline models
+models/logistic_regression_baseline.joblib
+models/random_forest_baseline.joblib
+models/gradient_boosting_baseline.joblib

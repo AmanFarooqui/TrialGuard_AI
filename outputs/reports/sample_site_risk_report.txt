@@ -1,0 +1,22 @@
+TrialGuard AI Site Risk Report
+================================
+site_id: SITE0249
+monitoring_period: 8
+predicted risk probability: 0.4450
+risk status (threshold 0.40): HIGH RISK
+
+Top risk drivers
+-----------------
+- Protocol Deviations: value=3.0000, SHAP contribution=0.053381
+- Missing Data: value=4.0000, SHAP contribution=0.029972
+- Total Patients: value=62, SHAP contribution=0.014545
+- Total Visits: value=97, SHAP contribution=0.004075
+- Dropped Out Patients: value=8, SHAP contribution=0.000754
+
+Protective factors
+------------------
+- Completed Visits: value=87, SHAP contribution=-0.048484
+- Average Data Entry Delay: value=4.0000, SHAP contribution=-0.027733
+- Visit Completion Rate: value=0.8969, SHAP contribution=-0.021065
+- Patient Dropout Rate: value=0.1290, SHAP contribution=-0.009977
+- Average Visit Delay: value=2.1494, SHAP contribution=-0.009510

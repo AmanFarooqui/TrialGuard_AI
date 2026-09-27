@@ -1,0 +1,19 @@
+threshold_label,threshold,accuracy,precision,recall,f1_score,roc_auc,confusion_matrix,classification_report
+Default threshold,0.5,0.745,0.6496598639455783,0.5568513119533528,0.5996860282574569,0.7658075624248395,"[[554, 103], [152, 191]]","               precision    recall  f1-score   support
+
+not_high_risk       0.78      0.84      0.81       657
+    high_risk       0.65      0.56      0.60       343
+
+     accuracy                           0.74      1000
+    macro avg       0.72      0.70      0.71      1000
+ weighted avg       0.74      0.74      0.74      1000
+"
+Previously selected threshold,0.4,0.744,0.6218487394957983,0.6472303206997084,0.6342857142857142,0.7658075624248395,"[[522, 135], [121, 222]]","               precision    recall  f1-score   support
+
+not_high_risk       0.81      0.79      0.80       657
+    high_risk       0.62      0.65      0.63       343
+
+     accuracy                           0.74      1000
+    macro avg       0.72      0.72      0.72      1000
+ weighted avg       0.75      0.74      0.75      1000
+"
