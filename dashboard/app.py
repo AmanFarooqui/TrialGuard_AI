@@ -7,7 +7,7 @@ import streamlit as st
 
 
 API_BASE_URL = "https://trialguard-ai.onrender.com"
-REQUEST_TIMEOUT_SECONDS = 10
+REQUEST_TIMEOUT_SECONDS = 30
 
 
 st.set_page_config(
@@ -145,18 +145,31 @@ def api_get(endpoint: str) -> Any:
     try:
         response = requests.get(
             f"{API_BASE_URL}{endpoint}",
-            timeout=REQUEST_TIMEOUT_SECONDS,
+            timeout=30,
         )
-        response.raise_for_status()
+
+        if not response.ok:
+            raise APIUnavailableError(
+                f"Backend error {response.status_code} for {endpoint}: "
+                f"{response.text[:500]}"
+            )
+
         return response.json()
+
+    except requests.Timeout as error:
+        raise APIUnavailableError(
+            f"Backend request timed out for {endpoint}."
+        ) from error
+
     except requests.RequestException as error:
         raise APIUnavailableError(
-            "TrialGuard AI backend is unavailable. Start it with "
-            "`uvicorn src.api.main:app --reload` and refresh this page."
+            f"Could not connect to backend at {API_BASE_URL}: {error}"
         ) from error
+
     except ValueError as error:
         raise APIUnavailableError(
-            f"The backend returned an invalid response for {endpoint}."
+            f"Backend returned invalid JSON for {endpoint}: "
+            f"{response.text[:500]}"
         ) from error
 
 
